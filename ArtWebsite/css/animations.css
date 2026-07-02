@@ -1,0 +1,7 @@
+﻿/*
+==================================================
+animations.css
+Purpose: Subtle reveal, hover, navigation, and loading animations.
+==================================================
+*/
+.reveal{opacity:0;transform:translateY(18px);transition:.7s ease}.reveal.visible{opacity:1;transform:none}@keyframes float{50%{transform:translateY(-18px)}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

@@ -1,0 +1,7 @@
+﻿/*
+==================================================
+utils.js
+Purpose: Shared helpers for formatting, links, images, cards, and reveal animations.
+==================================================
+*/
+const StudioUtils=(()=>{function money(v){const n=Number(v||0);return n?new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(n):"Price on request"}function params(){return new URLSearchParams(location.search)}function fallback(title){const d=document.createElement("div");d.className="placeholder-image";d.textContent=title;return d}function image(src,alt){const img=document.createElement("img");img.loading="lazy";img.src=src;img.alt=alt;img.onerror=()=>img.replaceWith(fallback(alt));return img}function card(a){const link=document.createElement("a");link.className="card";link.href=`artwork.html?id=${encodeURIComponent(a.ID)}`;const fig=document.createElement("figure");fig.append(image(a.CoverImage,a.Title));const body=document.createElement("div");body.className="card-body";body.innerHTML=`<h3>${a.Title}</h3><p class="muted">${a.Series} / ${a.Year}</p><p>${money(a.Price)} - ${a.Availability}</p>`;link.append(fig,body);return link}function reveal(){document.querySelectorAll(".reveal").forEach(el=>{const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")}));obs.observe(el)})}return{money,params,image,card,reveal}})();

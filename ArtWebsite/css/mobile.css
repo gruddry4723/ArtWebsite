@@ -1,0 +1,7 @@
+﻿/*
+==================================================
+mobile.css
+Purpose: Responsive tablet and phone layout rules.
+==================================================
+*/
+@media(max-width:820px){.nav-toggle{display:block}.nav-links{position:absolute;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);display:none;flex-direction:column;padding:20px 24px}.nav-links.open{display:flex}.hero{padding:96px 22px}.hero-wall{grid-template-columns:repeat(3,1fr)}.gallery-layout,.artwork-detail,.featured-card{grid-template-columns:1fr}.filters{position:static}.toolbar{display:block}.meta{grid-template-columns:1fr}.section,.page{padding-left:18px;padding-right:18px}footer{display:block}h1{font-size:46px}}

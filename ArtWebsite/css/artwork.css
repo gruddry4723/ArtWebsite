@@ -1,0 +1,7 @@
+﻿/*
+==================================================
+artwork.css
+Purpose: Single artwork page, metadata, thumbnails, lightbox, and related artworks.
+==================================================
+*/
+.artwork-detail{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:48px}.main-art{aspect-ratio:4/5;background:var(--soft);cursor:zoom-in;margin:0}.main-art img{width:100%;height:100%;object-fit:cover}.thumbs{display:flex;gap:10px;margin-top:12px;overflow:auto}.thumbs button{width:76px;height:76px;border:1px solid var(--line);background:#fff;padding:0;cursor:pointer}.thumbs img{width:100%;height:100%;object-fit:cover}.meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0}.tag{display:inline-block;border:1px solid var(--line);padding:5px 9px;border-radius:999px;margin:4px}.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:80;display:grid;place-items:center;padding:30px}.lightbox img{max-width:92vw;max-height:84vh}.lightbox button{position:absolute;top:18px;right:18px}
