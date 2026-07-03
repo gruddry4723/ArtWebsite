@@ -1,7 +1,29 @@
-﻿/*
-==================================================
-mobile.css
-Purpose: Responsive tablet and phone layout rules.
-==================================================
-*/
-@media(max-width:820px){.nav-toggle{display:block}.nav-links{position:absolute;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);display:none;flex-direction:column;padding:20px 24px}.nav-links.open{display:flex}.hero{padding:96px 22px}.hero-wall{grid-template-columns:repeat(3,1fr)}.gallery-layout,.artwork-detail,.featured-card{grid-template-columns:1fr}.filters{position:static}.toolbar{display:block}.meta{grid-template-columns:1fr}.section,.page{padding-left:18px;padding-right:18px}footer{display:block}h1{font-size:46px}}
+@media(max-width:900px){
+  :root{--header:70px}
+  .site-nav{padding:0 18px}
+  .nav-toggle{display:block}
+  .nav-links{position:absolute;top:var(--header);left:0;right:0;background:rgba(251,250,247,.98);border-bottom:1px solid var(--line);display:none;flex-direction:column;align-items:flex-start;padding:20px 24px;box-shadow:0 18px 36px rgba(32,28,22,.08)}
+  .nav-links.open{display:flex}
+  .hero{min-height:86vh;padding:96px 20px 54px}
+  .hero-wall{grid-template-columns:repeat(3,1fr);gap:10px;opacity:.5}
+  .wall-tile{min-height:170px}
+  .gallery-layout,.artwork-detail,.featured-card,.split-intro,.about-panel,.contact-layout{grid-template-columns:1fr}
+  .about-panel.reverse .about-image{order:0}
+  .about-image{min-height:360px}
+  .filters,.artwork-copy{position:static}
+  .toolbar{display:block}
+  .sort-label{margin-top:14px;align-items:flex-start;flex-direction:column}
+  .sort-label select{width:100%}
+  .meta,.artwork-nav{grid-template-columns:1fr}
+  .section,.page{padding-left:18px;padding-right:18px}
+  .section{padding-top:76px;padding-bottom:76px}
+  .site-footer{display:block}
+  h1{font-size:44px}
+  h2{font-size:34px}
+}
+@media(max-width:520px){
+  .brand span{font-size:14px}
+  .hero-copy .button,.contact-form .button{width:100%;margin-right:0}
+  .artwork-grid,.series-grid{grid-template-columns:1fr}
+  .card-body{padding:16px}
+}

@@ -1,7 +1,65 @@
-﻿<!--
-==================================================
-contact.html
-Purpose:  contact page for collectors, curators, and press.
-==================================================
--->
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contact | brpartsandcraftscoza </title><meta name="description" content="Contact"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/mobile.css"></head><body><header class="site-header"><nav class="site-nav"><a class="brand" href="index.html">brpartsandcraftscoza</a><button class="nav-toggle" data-nav-toggle><span></span><span></span><span></span></button><div class="nav-links" data-nav-links><a href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="contact.html">Contact</a></div></nav></header><main class="page narrow reveal"><p class="eyebrow">Contact</p><h1>Artwork inquiries</h1><p>Email <a href="brpartsandcraftscoza@gmail.com">brpartsandcraftscoza@gmail.com</a> please include the artwork title or series name.</p><form class="contact-form" action="brpartsandcraftscoza'gmail.com" method="post" enctype="text/plain"><label>Name<input name="name" required></label><label>Email<input name="email" type="email" required></label><label>Subject<input name="subject" required></label><label>Message<textarea name="message" rows="7" required></textarea></label><button class="button dark">Send Inquiry</button></form></main><script src="js/menu.js"></script><script src="js/main.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | brpartsandcraftscoza</title>
+  <meta name="description" content="Contact brpartsandcraftscoza about artwork availability, commissions, and collector inquiries.">
+  <link rel="canonical" href="https://gruddry4723.github.io/ArtWebsite/contact.html">
+  <link rel="icon" href="images/logo/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body data-page="contact">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="brand" href="index.html"><span>brpartsandcraftscoza</span></a>
+      <button class="nav-toggle" data-nav-toggle aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav-links" data-nav-links>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="page contact-page">
+    <section class="intro reveal">
+      <p class="eyebrow">Contact</p>
+      <h1>Artwork inquiries</h1>
+      <p>Email <a href="mailto:brpartsandcraftscoza@gmail.com">brpartsandcraftscoza@gmail.com</a> with the artwork title or series name. The form below opens your email client with the same details.</p>
+    </section>
+
+    <section class="contact-layout reveal">
+      <form class="contact-form" action="mailto:brpartsandcraftscoza@gmail.com" method="post" enctype="text/plain">
+        <label>Name<input name="name" autocomplete="name" required></label>
+        <label>Email<input name="email" type="email" autocomplete="email" required></label>
+        <label>Subject<input name="subject" required></label>
+        <label>Message<textarea name="message" rows="7" required></textarea></label>
+        <button class="button dark" type="submit">Send Inquiry</button>
+      </form>
+      <aside class="contact-card">
+        <p class="eyebrow">For Collectors</p>
+        <h2>Include the artwork number when possible.</h2>
+        <p>Availability is maintained in the archive. For archived pieces, ask about similar works or future releases.</p>
+        <a class="text-link" href="gallery.html">Return to gallery</a>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <strong>brpartsandcraftscoza</strong>
+    <span>Collector and curatorial inquiries welcome.</span>
+  </footer>
+
+  <script src="js/utils.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

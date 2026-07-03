@@ -1,7 +1,19 @@
-﻿/*
-==================================================
-artwork.css
-Purpose: Single artwork page, metadata, thumbnails, lightbox, and related artworks.
-==================================================
-*/
-.artwork-detail{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:48px}.main-art{aspect-ratio:4/5;background:var(--soft);cursor:zoom-in;margin:0}.main-art img{width:100%;height:100%;object-fit:cover}.thumbs{display:flex;gap:10px;margin-top:12px;overflow:auto}.thumbs button{width:76px;height:76px;border:1px solid var(--line);background:#fff;padding:0;cursor:pointer}.thumbs img{width:100%;height:100%;object-fit:cover}.meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0}.tag{display:inline-block;border:1px solid var(--line);padding:5px 9px;border-radius:999px;margin:4px}.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:80;display:grid;place-items:center;padding:30px}.lightbox img{max-width:92vw;max-height:84vh}.lightbox button{position:absolute;top:18px;right:18px}
+.artwork-detail{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr);gap:54px;align-items:start}
+.main-art{aspect-ratio:4/5;background:var(--soft);cursor:zoom-in;margin:0;overflow:hidden;border-radius:8px;box-shadow:var(--shadow)}
+.main-art img{width:100%;height:100%;object-fit:cover}
+.thumbs{display:flex;gap:10px;margin-top:14px;overflow:auto;padding-bottom:4px}
+.thumbs button{flex:0 0 78px;width:78px;height:78px;border:1px solid var(--line);border-radius:6px;background:var(--surface);padding:0;cursor:pointer;overflow:hidden}
+.thumbs button:hover{border-color:var(--ink)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.artwork-copy{position:sticky;top:104px}
+.artwork-copy h1{font-size:clamp(42px,6vw,76px)}
+.meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:26px 0}
+.meta p{border-top:1px solid var(--line);padding-top:12px;margin:0;color:var(--muted)}
+.meta strong{color:var(--ink)}
+.tag{display:inline-block;border:1px solid var(--line);padding:5px 10px;border-radius:999px;margin:4px 4px 4px 0;font-size:12px;font-weight:800;color:var(--muted)}
+.artwork-nav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.artwork-nav a{border:1px solid var(--line);border-radius:8px;padding:14px;text-decoration:none;font-weight:800;background:var(--surface)}
+.artwork-nav span{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.lightbox{position:fixed;inset:0;background:rgba(13,12,11,.94);z-index:80;display:grid;place-items:center;padding:30px}
+.lightbox img{max-width:92vw;max-height:84vh;box-shadow:0 30px 100px rgba(0,0,0,.35)}
+.lightbox button{position:absolute;top:18px;right:18px}

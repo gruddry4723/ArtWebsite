@@ -1,7 +1,91 @@
-﻿<!--
-==================================================
-gallery.html
-Purpose: Dynamic gallery page with search, filters, and sorting.
-==================================================
--->
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gallery | brpartsandcraftscoza </title><meta name="description" content="Browse artworks by series, medium, year, price, availability, tags, and orientation."><link rel="icon" href="images/logo/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/gallery.css"><link rel="stylesheet" href="css/animations.css"><link rel="stylesheet" href="css/mobile.css"></head><body data-page="gallery"><header class="site-header"><nav class="site-nav"><a class="brand" href="index.html"><img src="images/logo/favicon.svg" alt=""><span>brpartsandcraftscoza</span></a><button class="nav-toggle" data-nav-toggle aria-label="Menu"><span></span><span></span><span></span></button><div class="nav-links" data-nav-links><a href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://www.instagram.com/" target="_blank">Instagram</a></div></nav></header><main class="page"><section class="intro reveal"><p class="eyebrow">Archive</p><h1>Gallery</h1><p>Search the full catalog or filter by artwork details.</p></section><section class="gallery-layout"><aside class="filters reveal"><label>Search<input data-search-input type="search" placeholder="Title, tags, medium..."></label><label>Series<select data-filter="series"><option value="">All series</option></select></label><label>Medium<select data-filter="medium"><option value="">All media</option></select></label><label>Year<select data-filter="year"><option value="">All years</option></select></label><label>Availability<select data-filter="availability"><option value="">Any</option></select></label><label>Orientation<select data-filter="orientation"><option value="">Any</option></select></label><label>Minimum width<input data-filter="minWidth" type="number" min="0"></label><label>Minimum height<input data-filter="minHeight" type="number" min="0"></label><label>Minimum price<input data-filter="minPrice" type="number" min="0"></label><label>Maximum price<input data-filter="maxPrice" type="number" min="0"></label><label>Tag contains<input data-filter="tag" type="text"></label><button class="button light" data-clear-filters>Clear Filters</button></aside><section class="results"><div class="toolbar reveal"><p data-result-count>Loading artworks...</p><select data-sort-select><option value="newest">Newest</option><option value="oldest">Oldest</option><option value="alphabetical">Alphabetical</option><option value="priceLow">Price Low to High</option><option value="priceHigh">Price High to Low</option><option value="random">Random</option></select></div><div class="series-strip" data-series-strip></div><div class="artwork-grid" data-gallery-grid></div></section></section></main><footer><strong>brpartsandcraftscoza </strong></footer><script src="js/utils.js"></script><script src="js/csv.js"></script><script src="js/search.js"></script><script src="js/filters.js"></script><script src="js/menu.js"></script><script src="js/gallery.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | brpartsandcraftscoza</title>
+  <meta name="description" content="Browse available and archived monotype prints by price, availability, dimensions, and search term.">
+  <link rel="canonical" href="https://gruddry4723.github.io/ArtWebsite/gallery.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gallery | brpartsandcraftscoza">
+  <meta property="og:description" content="Search and filter the full artwork archive.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="images/logo/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body data-page="gallery">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="brand" href="index.html"><span>brpartsandcraftscoza</span></a>
+      <button class="nav-toggle" data-nav-toggle aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav-links" data-nav-links>
+        <a href="index.html">Home</a>
+        <a href="gallery.html" aria-current="page">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="page">
+    <section class="intro reveal">
+      <p class="eyebrow">Archive</p>
+      <h1>Gallery</h1>
+      <p>Search the full catalog or filter by artwork details. Every listing keeps the original CSV data intact.</p>
+    </section>
+
+    <section class="gallery-layout" aria-label="Artwork gallery">
+      <aside class="filters reveal" aria-label="Gallery filters">
+        <label>Search<input data-search-input type="search" placeholder="Title, price, notes..."></label>
+        <label>Medium<select data-filter="medium"><option value="">All media</option></select></label>
+        <label>Year<select data-filter="year"><option value="">All years</option></select></label>
+        <label>Availability<select data-filter="availability"><option value="">Any</option></select></label>
+        <label>Orientation<select data-filter="orientation"><option value="">Any</option></select></label>
+        <label>Minimum width<input data-filter="minWidth" type="number" min="0" inputmode="numeric"></label>
+        <label>Minimum height<input data-filter="minHeight" type="number" min="0" inputmode="numeric"></label>
+        <label>Minimum price<input data-filter="minPrice" type="number" min="0" inputmode="numeric"></label>
+        <label>Maximum price<input data-filter="maxPrice" type="number" min="0" inputmode="numeric"></label>
+        <label>Tag contains<input data-filter="tag" type="text"></label>
+        <button class="button light" data-clear-filters type="button">Clear Filters</button>
+      </aside>
+
+      <section class="results">
+        <div class="toolbar reveal">
+          <p data-result-count>Loading artworks...</p>
+          <label class="sort-label">Sort
+            <select data-sort-select>
+              <option value="newest">Newest</option>
+              <option value="oldest">Oldest</option>
+              <option value="alphabetical">Alphabetical</option>
+              <option value="priceLow">Price Low to High</option>
+              <option value="priceHigh">Price High to Low</option>
+              <option value="random">Random</option>
+            </select>
+          </label>
+        </div>
+        <div class="artwork-grid" data-gallery-grid></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <strong>brpartsandcraftscoza</strong>
+    <span>Browse, shortlist, and inquire directly.</span>
+  </footer>
+
+  <script src="js/utils.js"></script>
+  <script src="js/csv.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

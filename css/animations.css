@@ -1,7 +1,12 @@
-﻿/*
-==================================================
-animations.css
-Purpose: Subtle reveal, hover, navigation, and loading animations.
-==================================================
-*/
-.reveal{opacity:0;transform:translateY(18px);transition:.7s ease}.reveal.visible{opacity:1;transform:none}@keyframes float{50%{transform:translateY(-18px)}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.reveal.visible{opacity:1;transform:none}
+.card.reveal{transition:opacity .75s ease,transform .75s ease,box-shadow .22s ease,border-color .22s ease}
+body:not(.loaded){cursor:progress}
+body::before{content:"";position:fixed;inset:0;background:var(--paper);z-index:100;pointer-events:none;opacity:0;transition:opacity .38s ease}
+body:not(.loaded)::before{opacity:1}
+@keyframes float{50%{transform:translateY(-18px)}}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+  body::before{display:none}
+}

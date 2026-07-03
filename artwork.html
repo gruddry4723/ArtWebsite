@@ -1,7 +1,48 @@
-﻿<!--
-==================================================
-artwork.html
-Purpose: Single artwork page with thumbnails, lightbox, metadata, and related works.
-==================================================
--->
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Artwork | brpartsandcraftscoza </title><meta name="description" content="Artwork detail page."><link rel="icon" href="images/logo/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/artwork.css"><link rel="stylesheet" href="css/mobile.css"></head><body data-page="artwork"><header class="site-header"><nav class="site-nav"><a class="brand" href="index.html"><img src="images/logo/favicon.svg" alt=""><span>brpartsandcraftscoza</span></a><button class="nav-toggle" data-nav-toggle aria-label="Menu"><span></span><span></span><span></span></button><div class="nav-links" data-nav-links><a href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://www.instagram.com/" target="_blank">Instagram</a></div></nav></header><main class="page"><section data-artwork-detail></section></main><footer><strong>brpartsandcraftscoza </strong></footer><script src="js/utils.js"></script><script src="js/csv.js"></script><script src="js/lightbox.js"></script><script src="js/menu.js"></script><script src="js/artwork.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artwork | brpartsandcraftscoza</title>
+  <meta name="description" content="Artwork detail page with image viewing, metadata, related works, and inquiry links.">
+  <link rel="canonical" href="https://gruddry4723.github.io/ArtWebsite/artwork.html">
+  <link rel="icon" href="images/logo/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/artwork.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body data-page="artwork">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="brand" href="index.html"><span>brpartsandcraftscoza</span></a>
+      <button class="nav-toggle" data-nav-toggle aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav-links" data-nav-links>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="page artwork-page">
+    <section data-artwork-detail></section>
+  </main>
+
+  <footer class="site-footer">
+    <strong>brpartsandcraftscoza</strong>
+    <span>Artwork details and direct inquiries.</span>
+  </footer>
+
+  <script src="js/utils.js"></script>
+  <script src="js/csv.js"></script>
+  <script src="js/lightbox.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/artwork.js"></script>
+</body>
+</html>
