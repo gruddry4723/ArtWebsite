@@ -43,7 +43,7 @@ const StudioData=(()=>{
   }
   async function loadAll(){
     const [artworks,series,featured]=await Promise.all([
-      loadCsv("data/artworks.csv"),
+      loadCsv("data/artworks.csv?v=20260704-local-images"),
       loadCsv("data/series.csv"),
       loadCsv("data/featured.csv")
     ]);

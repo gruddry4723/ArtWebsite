@@ -1,1 +1,3 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><rect width="96" height="96" rx="18" fill="#111"/><path d="M24 70 46 18h6l20 52h-9l-5-14H39l-6 14h-9Zm18-22h13l-6-18-7 18Z" fill="#fff"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+  <circle cx="48" cy="48" r="44" fill="#000"/>
+</svg>

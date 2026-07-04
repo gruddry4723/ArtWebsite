@@ -20,12 +20,18 @@ const StudioUtils=(()=>{
     img.onerror=()=>img.replaceWith(fallback(alt));
     return img;
   }
+  function artworkAlt(a){
+    const title=text(a?.Title,"Untitled");
+    const format=a?.Orientation?`${a.Orientation.toLowerCase()} composition`:"abstract composition";
+    const series=a?.Series?` from the ${a.Series} series`:"";
+    return `${title}, original black and white abstract monotype print, ${format}${series}`;
+  }
   function card(a){
     const link=document.createElement("a");
     link.className="card reveal";
     link.href=`artwork.html?id=${encodeURIComponent(a.ID)}`;
     const fig=document.createElement("figure");
-    fig.append(image(a.CoverImage,a.Title));
+    fig.append(image(a.CoverImage,artworkAlt(a)));
     const body=document.createElement("div");
     body.className="card-body";
     body.innerHTML=`<h3>${text(a.Title,"Untitled")}</h3><p class="muted">${money(a.Price)}</p><p>${text(a.Availability,"Available")}</p>`;
@@ -52,5 +58,5 @@ const StudioUtils=(()=>{
     });
   }
   window.addEventListener("load",()=>document.body.classList.add("loaded"));
-  return{money,params,image,card,reveal,text};
+  return{money,params,image,artworkAlt,card,reveal,text};
 })();

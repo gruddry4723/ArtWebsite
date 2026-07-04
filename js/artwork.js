@@ -4,9 +4,56 @@ StudioData.loadAll().then(({artworks})=>{
   const art=artworks[index]||artworks[0];
   const prev=artworks[(index-1+artworks.length)%artworks.length];
   const next=artworks[(index+1)%artworks.length];
-  document.title=`${art.Title} | brpartsandcraftscoza`;
+  const baseUrl="https://gruddry4723.github.io/ArtWebsite/";
+  const artworkUrl=`${baseUrl}artwork.html?id=${encodeURIComponent(art.ID)}`;
+  const artworkImageUrl=new URL(art.CoverImage,baseUrl).href;
+  const artworkAlt=StudioUtils.artworkAlt(art);
+  const seoDescription=`${art.Title}, an original handmade abstract monotype print. ${art.Description}`.trim().slice(0,160);
+  const setMeta=(selector,value)=>{
+    const node=document.querySelector(selector);
+    if(node)node.content=value;
+  };
+  document.title=`${art.Title} | Original Abstract Monotype Print`;
   const meta=document.querySelector('meta[name="description"]');
-  if(meta)meta.content=art.Description;
+  if(meta)meta.content=seoDescription;
+  const canonical=document.querySelector('link[rel="canonical"]');
+  if(canonical)canonical.href=artworkUrl;
+  setMeta('meta[property="og:title"]',`${art.Title} | Original Abstract Monotype Print`);
+  setMeta('meta[property="og:description"]',seoDescription);
+  setMeta('meta[property="og:url"]',artworkUrl);
+  setMeta('meta[property="og:image"]',artworkImageUrl);
+  setMeta('meta[property="og:image:alt"]',artworkAlt);
+  setMeta('meta[name="twitter:title"]',`${art.Title} | Original Abstract Monotype Print`);
+  setMeta('meta[name="twitter:description"]',seoDescription);
+  setMeta('meta[name="twitter:image"]',artworkImageUrl);
+  setMeta('meta[name="twitter:image:alt"]',artworkAlt);
+
+  const artworkSchema={
+    "@context":"https://schema.org",
+    "@type":["VisualArtwork","Product"],
+    "@id":`${artworkUrl}#artwork`,
+    name:art.Title,
+    description:art.Description,
+    url:artworkUrl,
+    image:art.Images.filter(Boolean).map(src=>new URL(src,baseUrl).href),
+    category:"Original abstract monotype print",
+    creator:{"@type":"Organization",name:"brpartsandcraftscoza",url:baseUrl}
+  };
+  if(art.Medium)artworkSchema.artMedium=art.Medium;
+  if(art.Width)artworkSchema.width={"@type":"QuantitativeValue",value:Number(art.Width),unitCode:"MMT"};
+  if(art.Height)artworkSchema.height={"@type":"QuantitativeValue",value:Number(art.Height),unitCode:"MMT"};
+  if(Number(art.Price))artworkSchema.offers={
+    "@type":"Offer",
+    url:artworkUrl,
+    price:Number(art.Price).toFixed(2),
+    priceCurrency:"USD",
+    availability:art.Availability.toLowerCase()==="available"?"https://schema.org/InStock":"https://schema.org/OutOfStock"
+  };
+  const schema=document.createElement("script");
+  schema.type="application/ld+json";
+  schema.dataset.artworkSchema="";
+  schema.textContent=JSON.stringify(artworkSchema);
+  document.head.append(schema);
   const shell=document.querySelector("[data-artwork-detail]");
   const related=artworks.filter(a=>a.Series===art.Series&&a.ID!==art.ID).slice(0,4);
   shell.innerHTML=`
@@ -45,14 +92,14 @@ StudioData.loadAll().then(({artworks})=>{
   const main=shell.querySelector("[data-main-art]");
   function setImage(src){
     main.innerHTML="";
-    main.append(StudioUtils.image(src,art.Title));
-    main.onclick=()=>StudioLightbox.open(src,art.Title);
+    main.append(StudioUtils.image(src,artworkAlt));
+    main.onclick=()=>StudioLightbox.open(src,artworkAlt);
   }
   art.Images.forEach((src,i)=>{
     const b=document.createElement("button");
     b.type="button";
     b.setAttribute("aria-label",`View image ${i+1} for ${art.Title}`);
-    b.append(StudioUtils.image(src,`${art.Title} thumbnail ${i+1}`));
+    b.append(StudioUtils.image(src,`${artworkAlt}, image ${i+1}`));
     b.onclick=()=>setImage(src);
     shell.querySelector("[data-thumbs]").append(b);
   });
